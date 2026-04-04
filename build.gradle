@@ -1,0 +1,65 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'kkennib.net'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'com.amazonaws.serverless:aws-serverless-java-container-springboot3:2.0.1'
+	implementation 'org.springframework.cloud:spring-cloud-function-adapter-aws:3.2.5'
+	implementation 'org.springframework.cloud:spring-cloud-starter-function-web:3.2.5'
+	implementation 'com.amazonaws:aws-lambda-java-core:1.2.3'
+	implementation 'com.amazonaws:aws-lambda-java-events:3.11.4'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.postgresql:postgresql:42.6.0'
+	implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+	implementation 'software.amazon.awssdk:core:2.25.6'
+	implementation 'software.amazon.awssdk:secretsmanager:2.25.6'
+	implementation 'com.google.api-client:google-api-client:2.2.0'
+	implementation 'com.google.oauth-client:google-oauth-client:1.34.1'
+	implementation 'com.google.api-client:google-api-client-jackson2:1.34.1'
+	implementation 'com.google.http-client:google-http-client-jackson2:1.43.3'
+	implementation 'com.auth0:java-jwt:4.4.0'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+	compileOnly 'org.projectlombok:lombok:1.18.28'
+	annotationProcessor 'org.projectlombok:lombok:1.18.28'
+	implementation 'software.amazon.awssdk:s3:2.25.17'
+	implementation platform("software.amazon.awssdk:bom:2.25.7") // 버전은 SES 클라이언트와 맞춰야 함
+	implementation 'software.amazon.awssdk:ses'
+	implementation 'org.mockito:mockito-core:5.5.0'
+	testImplementation 'org.mockito:mockito-core:5.5.0'
+	testImplementation 'org.mockito:mockito-junit-jupiter:5.5.0'
+	testImplementation 'com.jayway.jsonpath:json-path:2.8.0'
+	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.freemarker:freemarker:2.3.32'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

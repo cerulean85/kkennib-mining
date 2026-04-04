@@ -1,0 +1,35 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  domain: https://stock.kkennib.net
+  port: 8081
+
+cloud:
+  aws:
+    region:
+      static: ap-northeast-2
+    s3:
+      bucket-name: kkennib-s3
+
+custom:
+  settings:
+    page-count: 20
+  email:
+    contact: zhwan85@kkennib.net
+
+google:
+  client-id: 869848138291-enoea2g8mspqsc31tudefitab5atl5c4.apps.googleusercontent.com
+
+
+
