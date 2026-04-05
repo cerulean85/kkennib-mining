@@ -12,7 +12,7 @@ spring:
         format_sql: true
 
 server:
-  domain: https://stock.kkennib.net
+  domain: https://mine.dycdyp.com
   port: 8081
 
 cloud:
@@ -20,13 +20,13 @@ cloud:
     region:
       static: ap-northeast-2
     s3:
-      bucket-name: kkennib-s3
+      bucket-name: earthling-cube-s3
 
 custom:
   settings:
     page-count: 20
   email:
-    contact: zhwan85@kkennib.net
+    contact: zhwan85@dycdyp.com
 
 google:
   client-id: 869848138291-enoea2g8mspqsc31tudefitab5atl5c4.apps.googleusercontent.com

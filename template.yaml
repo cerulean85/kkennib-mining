@@ -20,8 +20,8 @@ Resources:
             - Effect: Allow
               Action:
                 - secretsmanager:GetSecretValue
-              Resource: arn:aws:secretsmanager:ap-northeast-2:307946656924:secret:neon-kkennibdb-postgreSQL-bbIyPv
-      Timeout: 900
+              Resource: arn:aws:secretsmanager:ap-northeast-2:166611709323:secret:kkennib/mining/postgresql-*
+      Timeout: 30
       Events:
         ProxyResource:
           Type: Api

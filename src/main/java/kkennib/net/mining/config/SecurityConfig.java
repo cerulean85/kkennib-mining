@@ -59,6 +59,8 @@ public class SecurityConfig {
     configuration.setAllowedOriginPatterns(Arrays.asList(
             "https://house.kkennib.net",
             "https://stock.kkennib.net",
+            "https://api-mine2.dycdyp.com",
+            "https://mine.dycdyp.com",
             "https://*.vercel.app/",
             "http://localhost:3*"
     ));
